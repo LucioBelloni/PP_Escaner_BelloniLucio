@@ -14,6 +14,12 @@ namespace Entidades
         private string marca;
         private TipoDoc tipo;
 
+
+        public List<Documento> ListaDocumentos { get => listaDocumentos; }
+        public Departamento Locacion { get => locacion; }
+        public string Marca { get => marca; }
+        public TipoDoc Tipo { get => tipo; }
+
         public Escaner(string marca, TipoDoc tipo)
         {
             this.marca = marca;
@@ -34,7 +40,7 @@ namespace Entidades
         {
             foreach (Documento dc in e.listaDocumentos)
             {
-                if (dc == d) return true;
+                return (dc == d);
             }
             return false;    
         }
@@ -43,19 +49,30 @@ namespace Entidades
         {
             foreach (Documento dc in e.listaDocumentos)
             {
-                if (!(dc == d)) return true;
+                return !(dc == d);
             }
-            return false;
+            return true;
         }
 
         public static bool operator +(Escaner e, Documento d)
         {
-
+            if (e != d)
+            {
+                if (d.Estado == Paso.Inicio)
+                {
+                    e.CambiarEstadoDocumento(d);
+                    e.listaDocumentos.Add(d);
+                    return true;
+                }
+            } 
+            return false;     
         }
 
-        public List<Documento> ListaDocumentos { get => listaDocumentos;}
-        public Departamento Locacion { get => locacion; }
-        public string Marca { get => marca;}
-        public TipoDoc Tipo { get => tipo; }
+        public bool CambiarEstadoDocumento(Documento d)
+        {
+           return  d.AvanzarEstado();
+        }
+
+ 
     }
 }

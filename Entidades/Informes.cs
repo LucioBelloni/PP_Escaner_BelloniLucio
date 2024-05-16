@@ -8,7 +8,10 @@ namespace Entidades
 {
     internal static  class Informes
     {
-        public void MostrarDistribuido(Escaner e, out int extension, out int cantidad, out string resumen);
+        //public void MostrarDistribuido(Escaner e, out int extension, out int cantidad, out string resumen)
+        
+            
+        
 
     }
 }

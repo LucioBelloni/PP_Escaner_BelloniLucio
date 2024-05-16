@@ -39,7 +39,7 @@ namespace Entidades
             sb.AppendLine($"{base.ToString()}");
             sb.AppendLine($"El alto es: {this.alto}");
             sb.AppendLine($"El ancho es: {this.ancho}");
-            sb.AppendLine($"Supericie: {this.Superficie} =   cm2"); // aca falta la cuenta xd 
+            sb.AppendLine($"Supericie: {this.alto} * {this.ancho} = {this.Superficie}cm2"); // aca falta la cuenta xd 
             return sb.ToString();
         }
 
