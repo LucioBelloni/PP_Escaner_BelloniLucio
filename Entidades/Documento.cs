@@ -24,10 +24,29 @@ namespace Entidades
             this.anio = anio;
             this.numNormalizado = numNormalizado;
             this.barcode = barcode;
+            this.estado = Paso.Inicio;
         }
 
         public bool AvanzarEstado()
         {
+            switch (Estado)
+            {
+                case Paso.Inicio:
+                    estado = Paso.Distribuido;
+                    break;
+                case Paso.Distribuido:
+                    estado = Paso.EnEscaner;
+                    break;
+                case Paso.EnEscaner:
+                    estado = Paso.EnRevision;
+                    break;
+                case Paso.EnRevision:
+                    estado = Paso.Terminado;
+                    break;
+                default:
+                    return false;
+
+            }
             return true;
         }
 
@@ -48,7 +67,7 @@ namespace Entidades
         public int Anio { get => anio;}
         public string Autor { get => autor; }
         public string Barcode { get => barcode; }
-        public Paso Estado { get => Paso.Inicio; }
+        public Paso Estado { get => estado; }
         protected string NumNormalizado { get => numNormalizado;  }
         public string Titulo { get => titulo; }
     }
