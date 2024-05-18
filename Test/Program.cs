@@ -14,6 +14,7 @@ namespace Test
             Mapa mapa1 = new Mapa("America Latina", "Americo", 1520, "122", "04040", 10, 15);
             Mapa mapa2 = new Mapa("Argentina", "Gardel", 1810, "123", "05050", 20, 25);
 
+
             Console.WriteLine(libro1.ToString());
             Console.WriteLine(escaner1 + libro1);
             Console.WriteLine(escaner1 + libro2);
@@ -22,6 +23,17 @@ namespace Test
             Console.WriteLine($"{escaner2 + mapa2}\n");
             Console.WriteLine(libro1.ToString());
             Console.WriteLine(mapa1.ToString());
+
+      
+            Informes.MostrarDistribuidos(escaner2, out int extension, out int cantidad, out string resumen);
+            Console.WriteLine($"\nextension: {extension}");
+            Console.WriteLine($"cantidad: {cantidad}");
+            Console.WriteLine($"{resumen}");
+
+
+
+
+
             //Informes.MostrarDistribuidos(escaner1, out int extension, out int cantidad, out string resumen);
             //Console.WriteLine($"\nextension: {extension}");
             //Console.WriteLine($"cantidad: {cantidad}");

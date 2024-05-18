@@ -15,11 +15,11 @@ namespace Entidades
         public int Ancho { get => ancho;}
         public int Superficie { get => alto * ancho; }
 
-        public Mapa(string titulo, string autor, int anio, string numNormalizado, string barcode, int alto , int ancho) : base(titulo, autor, anio, numNormalizado, barcode)
+        public Mapa(string titulo, string autor, int anio, string numNormalizado, string barcode, int ancho , int alto) : base(titulo, autor, anio, numNormalizado, barcode)
         {
-            this.alto = alto;
             this.ancho = ancho;
-            numNormalizado = "Los mapas No tienen numero ";
+            this.alto = alto;
+            
         }
 
 
@@ -36,10 +36,11 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"{base.ToString()}");
-            sb.AppendLine($"El alto es: {this.alto}");
-            sb.AppendLine($"El ancho es: {this.ancho}");
-            sb.AppendLine($"Supericie: {this.alto} * {this.ancho} = {this.Superficie}cm2"); // aca falta la cuenta xd 
+            sb.AppendLine($"Titulo: {base.Titulo}");
+            sb.AppendLine($"Autor: {base.Autor}");
+            sb.AppendLine($"Año: {base.Anio}");
+            sb.AppendLine($"Cód. de barras: {base.Barcode}");
+            sb.AppendLine($"Supericie: {this.alto} * {this.ancho} = {this.Superficie}cm2"); 
             return sb.ToString();
         }
 
