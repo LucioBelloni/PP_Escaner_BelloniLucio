@@ -13,6 +13,7 @@ namespace Entidades
             MostrarDocumentosPorEstado(e,Paso.Distribuido, out extension, out cantidad, out resumen);
         }
 
+   
         private static void MostrarDocumentosPorEstado(Escaner e, Paso estado, out int extension, out int cantidad, out string resumen)
         {
             extension = 0;
@@ -32,16 +33,9 @@ namespace Entidades
                     {
                         extension += mapa.Superficie;
                     }
-                    else
-                    {
-                        sb.AppendLine("No se pudo un libro,ni mapa");
-                    }
                     sb.AppendLine(dc.ToString());
                 }
-                else
-                {
-                    sb.AppendLine("El estado es distinto");
-                }
+               
             }
             resumen = sb.ToString();
         }
