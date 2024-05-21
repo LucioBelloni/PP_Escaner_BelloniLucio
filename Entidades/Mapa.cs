@@ -18,8 +18,7 @@ namespace Entidades
         public Mapa(string titulo, string autor, int anio, string numNormalizado, string barcode, int ancho , int alto) : base(titulo, autor, anio, numNormalizado, barcode)
         {
             this.ancho = ancho;
-            this.alto = alto;
-            
+            this.alto = alto; 
         }
 
         public static bool operator ==(Mapa m1, Mapa m2)

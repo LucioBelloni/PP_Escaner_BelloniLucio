@@ -34,8 +34,6 @@ namespace Entidades
             {
                 this.locacion = Departamento.procesosTecnicos;
             }
-
-            
         }
 
         public bool CambiarEstadoDocumento(Documento d)
@@ -90,14 +88,14 @@ namespace Entidades
             {
                 if(e.tipo == TipoDoc.libro && d is Libro)
                 {
-                    e.CambiarEstadoDocumento(d);
                     e.listaDocumentos.Add(d);
+                    e.CambiarEstadoDocumento(d);
                     return true;
                 }
                 else if (e.tipo == TipoDoc.mapa && d is Mapa)
                 {
-                    e.CambiarEstadoDocumento(d);
                     e.listaDocumentos.Add(d);
+                    e.CambiarEstadoDocumento(d);
                     return true;
                 }
                        
@@ -105,9 +103,5 @@ namespace Entidades
             return false;
 
         }
-
-        
-
- 
     }
 }
