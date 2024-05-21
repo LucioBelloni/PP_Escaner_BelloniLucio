@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public static  class Informes
+    public static class Informes
     {
         public static void MostrarDistribuidos(Escaner e, out int extension, out int cantidad, out string resumen)
         {

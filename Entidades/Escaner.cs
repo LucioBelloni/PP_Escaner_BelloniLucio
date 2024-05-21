@@ -38,28 +38,54 @@ namespace Entidades
             
         }
 
+        public bool CambiarEstadoDocumento(Documento d)
+        {
+           if( this == d)
+           {
+                if(d is Libro && this.locacion == Departamento.mapoteca)
+                {
+                    return false;
+                }
+                else if (d is Mapa && this.locacion == Departamento.procesosTecnicos)
+                {
+                    return false;
+                }
+                else return d.AvanzarEstado();
+           }
+            return false;
+        }
+
+
         public static bool operator ==(Escaner e, Documento d)
         {
             foreach (Documento dc in e.listaDocumentos)
             {
-                return (dc == d);
+                if (dc is Mapa mapa && d is Mapa mapa2)
+                {
+                    if (mapa == mapa2)
+                    {
+                        return true;
+                    }
+                }
+                else if (dc is Libro libro && d is Libro libro2)
+                {
+                    if (libro == libro2)
+                    {
+                        return true;
+                    }
+                }
             }
-            return false;    
+            return false;
         }
 
         public static bool operator !=(Escaner e, Documento d)
         {
-            foreach (Documento dc in e.listaDocumentos)
-            {
-                return !(dc == d);
-            }
-            return true;
+            return !(e == d);
         }
 
         public static bool operator +(Escaner e, Documento d)
         {
            
-                
             if (e != d && d.Estado == Paso.Inicio)
             {
                 if(e.tipo == TipoDoc.libro && d is Libro)
@@ -78,19 +104,9 @@ namespace Entidades
             }
             return false;
 
-
-
-
-
-
-
-
         }
 
-        public bool CambiarEstadoDocumento(Documento d)
-        {
-           return  d.AvanzarEstado();
-        }
+        
 
  
     }
