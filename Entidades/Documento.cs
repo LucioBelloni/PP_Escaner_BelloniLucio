@@ -65,7 +65,6 @@ namespace Entidades
             }
             return true;
         }
-
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
