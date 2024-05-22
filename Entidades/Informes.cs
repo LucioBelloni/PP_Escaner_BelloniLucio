@@ -33,7 +33,7 @@ namespace Entidades
                     {
                         extension += mapa.Superficie;
                     }
-                    sb.AppendLine(dc.ToString());
+                    sb.Append(dc.ToString());
                 }
                
             }

@@ -68,6 +68,7 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+            
             sb.AppendLine($"Titulo: {this.titulo} ");
             sb.AppendLine($"Autor: {this.autor} ");
             sb.AppendLine($"Año: {this.anio} ");

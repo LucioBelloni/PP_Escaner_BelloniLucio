@@ -34,12 +34,12 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-           
             sb.AppendLine($"Titulo: {base.Titulo}");
             sb.AppendLine($"Autor: {base.Autor}");
             sb.AppendLine($"Año: {base.Anio}");
             sb.AppendLine($"Cód. de barras: {base.Barcode}");
             sb.AppendLine($"Supericie: {this.alto} * {this.ancho} = {this.Superficie}cm2"); 
+            
             return sb.ToString();
         }
 
