@@ -34,6 +34,7 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+           
             sb.AppendLine($"Titulo: {base.Titulo}");
             sb.AppendLine($"Autor: {base.Autor}");
             sb.AppendLine($"Año: {base.Anio}");

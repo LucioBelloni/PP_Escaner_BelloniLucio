@@ -17,6 +17,15 @@ namespace Entidades
         private string numNormalizado;
         private string titulo;
 
+        public enum Paso
+        {
+            Inicio,
+            Distribuido,
+            EnEscaner,
+            EnRevision,
+            Terminado
+        }
+
         public int Anio { get => anio; }
         public string Autor { get => autor; }
         public string Barcode { get => barcode; }
@@ -60,7 +69,6 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-
             sb.AppendLine($"Titulo: {this.titulo} ");
             sb.AppendLine($"Autor: {this.autor} ");
             sb.AppendLine($"Año: {this.anio} ");
@@ -70,6 +78,9 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+
+
 
 
     }

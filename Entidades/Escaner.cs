@@ -14,6 +14,17 @@ namespace Entidades
         private string marca;
         private TipoDoc tipo;
 
+        public enum Departamento
+        {
+            nulo,
+            mapoteca,
+            procesosTecnicos
+        }
+        public enum TipoDoc
+        {
+            libro,
+            mapa
+        }
 
         public List<Documento> ListaDocumentos { get => listaDocumentos; }
         public Departamento Locacion { get => locacion; }
@@ -84,7 +95,7 @@ namespace Entidades
         public static bool operator +(Escaner e, Documento d)
         {
            
-            if (e != d && d.Estado == Paso.Inicio)
+            if (e != d && d.Estado ==  Documento.Paso.Inicio)
             {
                 if(e.tipo == TipoDoc.libro && d is Libro)
                 {
